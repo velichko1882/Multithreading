@@ -1,0 +1,26 @@
+Processor: Intel® Core™ i3-6006U CPU @ 2.00GHz × 4
+Memory: 3.7 Gb
+
+Task: calculate the sum of numbers from 0 to 1_000_000_000.
+
+1. Single threaded application (without Fork/Join Framework) - 1700 ms;
+2. Fork/Join Framework single thread                         - 1760 ms;
+3. Fork/Join Framework with two threads                      - 1190 ms;
+4. Fork/Join Framework with four threads                     - 900 ms;
+5. Fork/Join Framework with eight threads                    - 870 ms;
+6. Fork/Join Framework with sixteen threads                  - 830 ms;
+
+
+Task: calculate the sum of numbers from 0 to 10_000_000_000.
+
+1. Single threaded application (without Fork/Join Framework) - 11050 ms;
+2. Fork/Join Framework single thread                         - 11060 ms;
+3. Fork/Join Framework with two threads                      - 6400 ms;
+4. Fork/Join Framework with four threads                     - 6200 ms;
+5. Fork/Join Framework with eight threads                    - 6200 ms;
+6. Fork/Join Framework with sixteen threads                  - 6180 ms;
+
+Сonclusion: a significant increase in performance is observed until
+the moment when the number of calculation threads is compared with
+the number of processor cores. A further increase in calculation flows
+is impractical.
